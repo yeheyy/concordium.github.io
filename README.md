@@ -27,6 +27,10 @@ This command generates static content into the `build` directory and can be serv
 
 ## Production
 
+Commits to master on github are automatically deployed to https://concordium-docs.herokuapp.com/.
+
 ```console
 PORT=3000 yarn start
 ```
+
+
