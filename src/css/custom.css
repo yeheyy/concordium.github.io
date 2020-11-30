@@ -26,8 +26,8 @@
 
 /* Open External Icon for target="_blank" urls */
 .menu__list a[target="_blank"]::after {
-  content: 'external';
-  font-size: 10px;
+  content: '↗';
+  font-size: 16px;
   color: var(--ifm-color-secondary);
   background-color: var(--ifm-color-primary-darkest);
   padding: 0px 6px;

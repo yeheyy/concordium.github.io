@@ -3,7 +3,7 @@ module.exports = {
   tagline: 'The Promise of Blockchain for Business',
   url: 'https://docs.concordium.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'concordium', // Usually your GitHub org/user name.
