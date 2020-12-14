@@ -2,4 +2,5 @@ Sphinx==3.2.1
 sphinx-rtd-theme==0.5.0
 sphinx-autobuild==2020.9.1
 sphinx-multiversion==0.2.4
+sphinx-intl==2.0.1
 doc8==0.8.1
