@@ -1,5 +1,4 @@
 {# Allows a page to override the template using :template:<file-in-_template-dir> #}
-
 {% extends meta.template|default('!layout.html') if meta is defined else "!layout.html" %}
 
 {# Adds extra headers to the template, such as custom styling #}

@@ -19,8 +19,11 @@ help:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 
+multiversion:
+	sphinx-multiversion "$(SOURCEDIR)" "$(BUILDDIR)/html"
+
 linkcheck:
-	@$(SPHINXBUILD) -b linkcheck "$(SOURCEDIR)" "$(BUILDDIR)"
+	sphinx-multiversion "$(SOURCEDIR)" "$(BUILDDIR)/html"  -b linkcheck
 
 dev:
 	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)/html" -E

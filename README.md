@@ -73,18 +73,20 @@ make lint
 
 
 ## Building the docs
-Run the following command:
-
+For a simple build run:
 ```
 make html
 ```
 
+To build every version of the documentation run:
+```
+make multiversion
+```
 
-To check for dead links (also done by the CI), run:
+To check for dead links on every version (also done by the CI), run:
 ```
 make linkcheck
 ```
-
 
 ## Deployment
 

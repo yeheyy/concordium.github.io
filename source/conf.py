@@ -46,7 +46,8 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.graphviz",
     # "sphinx.ext.imgconverter", # To support svg when targeting LaTeX
-    "multidoc"
+    "sphinx_multiversion",
+    "multidoc",
 ]
 
 # todo_include_todos = True
@@ -116,7 +117,7 @@ html_theme_options = {
     # 'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
     # 'analytics_anonymize_ip': False,
     'logo_only': True,
-    'display_version': True,
+    # 'display_version': True,
     # 'prev_next_buttons_location': 'bottom',
     # 'style_external_links': False,
     'style_nav_header_background': 'black',
