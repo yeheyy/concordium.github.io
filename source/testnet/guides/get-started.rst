@@ -4,32 +4,32 @@
 .. _testnet-get-started:
 
 =======================================
-Concordium ID: Get started with the app
+Concordium ID: Zaczynaj z aplikacją
 =======================================
 
 .. contents::
    :local:
    :backlinks: none
 
-Before following this guide you should have finished installing Concordium ID, as described in :ref:`the previous chapter<testnet-get-the-app>`.
+Przed wykonaniem tego przewodnika powinieneś był skończyć instalacja Concordium ID, tak jak opisane w :ref:`the poprzedni rozdział<testnet-get-the-app>`.
 
-Set up a passcode and biometrics
+Ustaw passcode i dane biometryczne
 ================================
 
-When you open the Concordium ID app for the first time, you will be greeted by a flow
-that will help you setup a passcode and biometric authentication, create an :ref:`glossary-initial-account`,
-and it will also guide you through getting an :ref:`glossary-identity`. The initial account is a special type of account,
-that is submitted to the chain by the :ref:`glossary-identity-provider`, upon creation of an identity. You can make the
-the same transactions from an initial account as from regular accounts, but the owner of the initial account will be
-known by the identity provider. After your identity is created you will be able to submit accounts to the chain
-yourself, and these will be unknown by the identity provider. You can learn more about accounts on the :ref:`Identities
-and accounts<reference-id-accounts>` page.
+Kiedy otwierasz the Concordium ID app po raz pierwszy, zostaniesz powitany przez przepływ
+że pomoże Ci ustawić hasło i uwierzytelnienie biometryczne, stworzyć :ref:`glosariusz-początkowe-konto`,
+i to będzie poprowadzi Cię przez to uzyskiwanie :ref:`glosariusz-tożsamość`. The konto początkowe to specjalny rodzaj konta,
+że jest przedłożony the łańcuch przez :ref:`dostawca-tożsamości-glosariusza`, na kreacja z an tożsamość. Możesz robić
+to samo transakcje od na konto początkowe jak ze zwykłych kont, ale właściciel początkowego konta będzie znany
+przez dostawcę tożsamości. Po twoja tożsamość jest tworzona będziesz mógł Zatwierdź rachunki do łańcucha
+siebie, i te będą nieznane przez dostawcę tożsamości. Możesz dowiedzieć się więcej o kontach na :ref:`Tożsamości
+i rachunki<odniesienie-id-rachunki>`strona.
 
-The first screen you will meet when opening Concordium ID is this one. It will just explain that
-you have to go through this process to get started.
+Pierwszy ekran Spotkacie się podczas otwierania Concordium ID jest ten. To będzie po prostu wyjaśnij że
+aby rozpocząć, musisz przejść przez ten proces.
 
-If you are ready to continue, you can press **Yes, let’s go!** The next screen will ask you to input
-a six-digit passcode. If you would rather use a full password including letters, you can also choose to do so here.
+Jeśli chcesz kontynuować, możesz nacisnąć **Tak, chodźmy!** następny ekran poprosi Cię o wejście
+sześciocyfrowy passcode. Jeśli wolisz używać pełnego hasła zawierającego litery, również możesz zdecyduj się to zrobić tutaj.
 
 .. image:: images/concordium-id/int1.png
       :width: 32%
@@ -41,82 +41,81 @@ a six-digit passcode. If you would rather use a full password including letters,
    Write a directive to make two or more images side-by-side centered
 
 
-Having chosen either a passcode or a full password, you will get the option to also use biometrics if your phone
-supports it, i.e. facial recognition or fingerprint. We recommend using biometrics if you have the option to do so.
+Wybierając zarówno za passcode lub pełne hasło, będziesz mógł również korzystać z biometrii jeśli twój telefon
+wspiera to, i.e. rozpoznawanie twarzy lub odcisk palca. Zalecamy użycie biometria jeśli masz taką możliwość it to.
 
 .. image:: images/concordium-id/int3.png
       :width: 32%
       :align: center
 
-Request your initial account and identity
+Poproś o początkowe konto i tożsamość
 =========================================
 
-Next up, you will get a choice between making a new initial account and identity, or importing an already existing set.
-Assuming this is the first time you are using Concordium ID, you can choose **I want to create my initial account** to continue.
+Dalej, będziesz miał wybór pomiędzy utworzeniem nowego konta początkowego a tożsamością, lub importowanie już istniejącego zestawu.
+Zakładając, że to pierwszy raz używasz Concordium ID, możesz wybrać **Chcę utworzyć moje początkowe konto** kontyntynuj.
 
 .. image:: images/concordium-id/int4.png
       :width: 32%
       :align: center
 
 
-On the next screen you will see a description of what the initial account is and the three steps you have to finish to get it,
-along with your identity. In short, the initial account is an account submitted to the chain by the identity provider of your
-choice, which means they will know that you are the owner of the account. Later you will be able to submit accounts to the
-chain by yourself, which means the owner of these accounts will be only known by you.
+Na następnym ekranie zobaczysz opis tego, czym jest początkowe konto i trzy kroki, które musisz wykonać, aby to osiągnąć,
+wraz z twoją tożsamością. proste słowa, the początkowe konto to konto przesłane do łańcucha przez dostawcę tożsamości z twojego
+wybór, co znaczy Oni się dowiedzą że jesteś the właściciel konta. Później będziesz mógł wysłać konto do
+łańcuch samodzielnie, co oznacza, że właściciel tych kont będzie znany tylko Tobie.
 
 .. image:: images/concordium-id/int5.png
       :width: 32%
       :align: center
 
-The three steps mentioned above are:
+Trzy kroki wymienione powyżej to:
 
-1. Naming of your initial account
-2. Naming your identity
-3. Requesting the initial account and identity from an :ref:`glossary-identity-provider` of your choice
+1. Nazwa twojego początkowego konta
+2. Nazwanie swojej tożsamości
+3. Żądanie the początkowe konto i tożsamość z :ref:`dostawca-tożsamości-glosariusza` do wyboru
 
-You will meet the first step on the next page, which prompts you to enter a name for your initial account. Pressing continue
-will take you to the next page, on which you have to name your identity. Both of these names will only be known by yourself,
-so you can name them more or less whatever you want (There are a few constraints on what letters and signs you can use).
+Spotkacie się pierwszy krok na następnej stronie, który podpowiada ty do wprowadzić nazwę dla twojego początkowego konta. naciskając Kontynuuj
+przeniesie Cię na następną stronę, na którym musisz nazwać swoją tożsamość. Obie te nazwy będą tylko znane samodzielnie,
+więc możesz je nazwać mniej więcej cokolwiek chcesz (Istnieje kilka ograniczeń dotyczących liter i znaków, których możesz używać).
 
-In the example below, we choose to call our initial account *Example Account 1* and our identity *Example Identity*. As
-mentioned, you can choose whichever names you want.
+W poniższym przykładzie, decydujemy się zadzwonić nasze początkowe konto *przykładowe konto 1* i naszą tożsamość *przykładowa tożsamość*. Tak jak
+wzmiankowany, możesz wybrać którykolwiek nazwy, które chcesz.
 
 .. image:: images/concordium-id/int6.png
       :width: 32%
 .. image:: images/concordium-id/int7.png
       :width: 32%
 
-By pressing **Continue to identity providers**, you will be taken to a page where you have to choose between *identity providers*.
-An identity provider is an external entity who will verify who you are, before returning an identity object to be used on the chain.
-For now you can choose between:
+Naciskając **kontyntynuj dostawcy tożsamości**, zostaniesz przeniesiony na stronę gdzie musisz wybierać pomiędzy *dostawca tożsamości*.
+Dostawca tożsamości to zewnętrzny podmiot, który zweryfikuje, kim jesteś, przed zwróceniem obiektu tożsamości, który ma być użyty w łańcuchu.
+Na razie możesz wybierać między:
 
-* *Notabene Development* which will give you a test identity without real life identity verification.
-* *Notabene* via which your real life identity will be verified.
+* *Notabene Rozwój* co da ci tożsamość testową bez prawdziwej weryfikacji tożsamości.
+* *Notabene* przez w którym zweryfikowana zostanie Twoja prawdziwa tożsamość.
 
 .. image:: images/concordium-id/int8.png
       :width: 32%
       :align: center
 
-By choosing Notebene Development, you will be given a test identity without further ado. If you choose Notabene you will be taken
-to their external identity issuance flow, which will guide you through the process of getting verified for an identity object.
-After finishing this flow, you will be taken back to Concordium ID.
+Przez wybór Notebene Rozwój, będziesz otrzymali testową tożsamość bez dalszych ceregieli. Jeśli wybierzesz Notabene zostaniesz przeniesiony 
+do ich zewnętrznej tożsamości wydanie pływ,, który poprowadzi Cię przez proces weryfikacji obiektu tożsamości.
+Po zakończeniu tego przepływu zostaniesz zabrany z powrotem do Concordium ID.
 
-After finishing either of the identity issuance flows, you will be met with the following screen. It will show you an overview
-of your identity and the initial account.
+Po wykończeniowy też na przepływy wydawania tożsamości, pojawi się następujący ekran. It will show you an overview
+z twojej tożsamości i początkowego konta.
 
 .. image:: images/concordium-id/int9.png
       :width: 32%
       :align: center
 
-Depending on the identity provider you have chosen, the layout of the identity card might differ slightly. You can see that the
-Example Account 1 is held by the identity Example Identity. The account created during this process will be marked with *(Initial)*
-in the app, so you know which account is the initial account submitted to the chain by the identity provider.
+W zależności od dostawcy tożsamości wybrałeś, układ dowodu osobistego może się nieznacznie różnić. Możesz zobaczyć że
+Przykładowe konto 1 jest przechowywane przez tożsamość Przykładowa tożsamość. Konto utworzone podczas tego procesu zostanie oznaczone * (początkowe) *
+w aplikacji, więc wiesz, które konto to początkowe konto wysłane do łańcucha przez dostawcę tożsamości.
 
-By pressing **Finish** you will be taken to the *Accounts screen*. On this screen you will be able to see your newly created initial
-account. It might be showing a *Pending icon*, which means the identity provider is still working on submitting and creating your
-initial account and identity. You can also navigate to the *Identities screen* by clicking on **Identities** at the bottom of the
-display. On this screen you can see your newly created identity, which might also still be pending in case the identity provider
-has not finished it yet. All you have to do now, is wait for them to finish.
+Naciskając **kończyć** zostaniesz przeniesiony do * ekranu Konta *. Na tym ekranie będziesz mógł zobaczyć nowo utworzony inicjał
+konto. To może być widoczne za *Oczekująca ikona*, co oznacza, że dostawca tożsamości jest nadal aktywny pracujący za przedkładający oraz tworzenie początkowego konta i tożsamości. Możesz także nawigować do ekranu * Tożsamości * klikając ** Tożsamości ** u dołu wyświetlacza.
+Na tym ekranie możesz zobaczyć swoją nowo utworzoną tożsamość, którymoże również nadal czekać na dostawcę tożsamości
+który jeszcze tego nie skończył. Wszystko co musisz teraz zrobić, to czekać, aż skończą.
 
 .. image:: images/concordium-id/int10.png
       :width: 32%
@@ -124,8 +123,7 @@ has not finished it yet. All you have to do now, is wait for them to finish.
       :width: 32%
 
 
-Support & Feedback
+Wsparcie i opinie
 ==================
 
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.
+Jeśli napotkasz żadnych problemów lub mieć sugestie, opublikuj swoje pytanie lub informacje zwrotne na Discord, lub Skontaktuj się z nami na testnet@concordium.com.
