@@ -4,29 +4,29 @@
 .. _testnet-explore-more:
 
 =======================================
-Concordium ID: Explore the *More* page
+Concordium ID: badać the *więcej* strona
 =======================================
 
 .. contents::
    :local:
    :backlinks: none
 
-Export
+Eksport
 ======
-Using the Concordium ID app it is possible to export your accounts and identities. To get started, browse to the *More* page.
-Depending on whether you are using the Android or iOS version of the app, the *More* page will look slightly different.
-On Android you will see three menu items: *Address Book*, *Export* and *Import*. On iOS you will only see *Address Book* and *Export*.
-This is because the Import feature works in two different ways depending on the platform, but we will get back to that.
+Korzystanie z aplikacji Concordium ID to jest możliwe aby wyeksportować swoje konta i tożsamości. zaczynać, Przeglądaj aby the *więcej* strona.
+W zależności od tego, czy korzystasz z wersji aplikacji na Androida czy iOS, the *więcej* strona będzie wyglądać nieco inaczej.
+W systemie Android zobaczysz trzy pozycje menu: *Książka adresowa*, *Eksport* and *przywóz*. Na iOS zobaczysz tylko *Książka adresowa* i *Eksport*.
+Dzieje się tak, ponieważ funkcja importu działa na dwa różne sposoby w zależności od platformy, ale wrócimy do tego.
 
 .. image:: images/concordium-id/exp1.png
       :width: 32%
 .. image:: images/concordium-id/exp2.png
       :width: 32%
 
-To start an export, press the **Export** option. Doing that will take you to a new page, that briefly explains what an export means.
-We recommend reading this carefully. Pressing **Continue** will take you to a page on which you will be asked to enter a password for
-your export file. After entering it twice, you can **Continue**. As a last step, you will be prompted by either iOS or Android on what
-you want to do with your exported file, using the layover from the phone’s operating system.
+Aby rozpocząć eksport, wciśnij the **Eksport** opcja. W ten sposób przejdziesz na nową stronę, To pokrótce wyjaśnia, co oznacza eksport.
+Zalecamy uważne przeczytanie tego. naciskając go **Kontyntynuj** przeniesie Cię na stronę u które ty będzie zapytany aby wprowadź hasło
+do pliku eksportu. Po wejściu do niego dwa razy, możesz **Kontyntynuj**. Tak jak ostatni krok, będziesz być podpowiedział na zarówno iOS lub Android na czym
+chcesz robić z wyeksportowanym plikiem, za pomocą the postój z systemu operacyjnego telefonu.
 
 .. image:: images/concordium-id/exp3.png
       :width: 32%
@@ -36,14 +36,14 @@ you want to do with your exported file, using the layover from the phone’s ope
 
 Import
 ======
-As mentioned in the previous section, the import feature works slightly differently on iOS and Android. On Android you press
-the *Import* option on the *More* page, which will let you browse to the file you want to import. Depending on your phone and
-Android version, this might look different specific to the operating system. On iOS you have to browse to the file from outside
-Concordium ID, and then press it and choose the *Share option*. This will let you choose Concordium ID as the app to handle the file.
+Jak wspomniano w poprzedniej sekcji, funkcja importu działa nieco inaczej na iOS i Androidzie. Na Androidzie naciskasz the
+*Import* opcja na the *więcej* strona, co pozwoli ci przejść do pliku, który chcesz zaimportować. W zależności na Twoim telefonie 
+i Wersja na Androida, to może Popatrz różne konkretny do systemu operacyjnego. Na iOS musisz przeglądać do pliku z zewnątrz
+Concordium ID, i następnie naciśnij go i wybierać the *Opcja Podziel się*. To pozwoli ci wybrać Concordium ID jako aplikacja do obsługi pliku.
 
-Having opened the file on either platform, you will first be asked to enter the password chosen on export. After pressing **Continue**
-you will have to verify yourself with the passcode or the biometrics chosen, when you set up the app. Finally you will get a list
-of the *Accounts*, *Identities* and the *Address Book* entries you have imported.
+mający otworzył plik na zarówno Platforma, najpierw zostaniesz zapytany aby wprowadzić hasło wybrany u eksport. Po naciśnięciu **Kontyntynuj**
+będziesz musiał się zweryfikować z the passcode lub the biometria wybrany, podczas konfigurowania aplikacji. Wreszcie otrzymasz listę
+z the *Konta*, *Tożsamości* i the *Książka adresowa* wpisy, które zaimportowałeś.
 
 .. image:: images/concordium-id/imp1.png
       :width: 32%
@@ -51,21 +51,20 @@ of the *Accounts*, *Identities* and the *Address Book* entries you have imported
       :width: 32%
 
 
-Address Book
+Książka adresowa
 ============
-As the name suggests, the *Address Book* is a place to keep account addresses. If you browse to the *Address Book* you will see that
-the addresses of your own accounts are already stored there. Besides seeing your own addresses, you can also add more entries to
-the *Address Book*, either by pressing the **QR code symbol**, or pressing the **plus sign** in the upper right corner. By doing that you
-can enter a new recipient address and give it a nickname in your *Address Book*. The entries in your address book can of course be
-searched, when you make a transfer.
+Jak sama nazwa wskazuje, the *Książka adresowa* to miejsce do przechowywania adresów kont. Jeśli przejdziesz do *Książki adresowej*, zobaczysz to
+adresy twoich własnych kont są już tam zapisane. Oprócz widząc własne adresy, możesz także dodać więcej wpisów do
+*Książka adresowa*, zarówno przez naciskając the **Symbol kodu QR**, lub naciskając **znak plus** w prawym górnym rogu. Robiąc to 
+możesz wprowadzić nowy adres odbiorcy i nadaj mu pseudonim w swojej *książce adresowej*. Oczywiście wpisy w książce adresowej mogą być
+przeszukiwane, kiedy wykonujesz przelew.
 
 .. image:: images/concordium-id/add1.png
       :width: 32%
 .. image:: images/concordium-id/add2.png
       :width: 32%
 
-Support & Feedback
+Wsparcie i opinie
 ==================
 
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.
+Jeśli napotkasz żadnych problemów lub mieć sugestie, opublikuj swoje pytanie lub informacje zwrotne na Discord, lub Skontaktuj się z nami na testnet@concordium.com.
