@@ -4,187 +4,181 @@
 .. _run-a-node:
 
 ==========
-Run a Node
+bieg węzeł (node)
 ==========
 
 .. contents::
    :local:
    :backlinks: none
 
-In this guide, you learn how to run a node on your computer that
-participates in the Concordium network. This means that you receive
-blocks and transactions from other nodes, as well as propagate
-information about blocks and transactions to the nodes in the Concordium
-network. After following this guide, you will be able to
+W tym przewodniku, dowiesz się, jak bieg węzeł(node) na swoim komputerze
+uczestniczy w sieci Concordium. Oznacza to, że otrzymujesz
+bloki i transakcje z innych węzłów, także tak jak propagować
+Informacja o blokach i transakcjach do węzłów w Concordium
+sieć. Po wykonaniu tego przewodnika, będziesz w stanie
 
--  run a Concordium node
--  observe it on the network dashboard and
--  query the state of the Concordium blockchain directly from your
-   machine.
+-  uruchom węzeł(node) Concordium
+-  obserwuj to na panelu sieciowym i
+-  zapytaj o stan łańcucha blokowego Concordium bezpośrednio z twojego maszyna.
 
-You do not need an account to run a node.
+Nie potrzebujesz konta, aby bieg węzeł(node).
 
-Before you begin
+Zanim zaczniesz
 ================
 
-Before running a Concordium node you will need to
+Przed uruchomieniem węzła Concordium musisz to zrobić
 
-1. Install and run Docker.
+1. Zainstaluj i uruchom Docker.
 
-   -  On *Linux*, allow Docker to be run as a non-root user.
+   -  Na *Linux*, zezwalaj na uruchamianie Dockera jako użytkownik inny niż root.
 
-2. Download and extract the :ref:`concordium-node-and-client-download` software.
+2. Pobierz i wypakuj the :ref:`concordium-node-and-client-download` oprogramowanie.
 
-Upgrade from an earlier version of Open Testnet
+Uaktualnij z wcześniejszej wersji Open Testnet
 ===============================================
 
-To upgrade to the current Concordium software for Open Testnet 4:
+Aby dokonać aktualizacji do aktualnego oprogramowania Concordium dla Open Testnet 4:
 
--  Follow the above steps to :ref:`download<downloads>` the most recent Concordium
-   software.
+-  Wykonaj powyższe kroki, aby :ref:`Download<downloads>` najnowsze 
+oprogramowanie Concordium.
 
--  Run the ``concordium-node-reset-data`` executable from the unzipped
-   archive.
+-  Uruchom ``concordium-node-reset-data`` wykonywalny z rozpakowanego archiwum.
 
-   -  For *Mac* users: the first time you open the tool, right-click the
-      ``concordium-node-reset-data`` file and select **Open**. A message
-      will appear that the software is from an unidentified developer.
-      Select **Open** again.
-   -  For *Windows* users: the first time you open the tool,
-      double-click the ``concordium-node-reset-data`` file. A message
-      will appear that the software is from an unidentified developer.
-      Select **More info** → **Run anyway**.
+   -  Dla *Mac* użytkowników: the pierwszy raz otwierasz narzędzie, kliknij prawym przyciskiem myszy
+      ``concordium-node-reset-data`` plik i wyselekcjonować **otwarty**. 
+      Pojawi się komunikat, że oprogramowanie pochodzi od niezidentyfikowanego programisty.
+      wyselekcjonować **otwarty** jeszcze raz.
+   -  Dla *Windows* użytkowników: the pierwszy raz otwierasz narzędzie,
+      podwójne-kliknięcie the ``concordium-node-reset-data`` plik. 
+      Pojawi się komunikat, że oprogramowanie pochodzi od niezidentyfikowanego programisty.
+     wyselekcjonować **Więcej informacji** → **Biegnij mimo wszystko**.
 
--  The tool will ask:
+-  Narzędzie zapyta:
 
-      *Do you also want to remove saved keys?*
+      *Czy chcesz również usunąć zapisane klucze?*
 
-   Accounts that were created for prior versions are no longer valid on
-   Open Testnet 3. Therefore, if you have stored accounts from prior
-   versions we recommend entering **y** which will delete all account
-   keys.
+   Konta utworzone dla wcześniejszych wersji nie są już ważne w Open Testnet 3. 
+   W związku z tym, jeśli masz zapisane konta z poprzednich wersji
+   zalecamy wejście **y** co spowoduje usunięcie wszystkich kluczy kont.
 
 .. _running-a-node:
 
-Running a node
+Uruchomienie węzła
 ==============
 
-To start running a client that will join the Open Testnet follow these
-steps:
+Aby rozpocząć uruchamianie klienta, który dołączy do Open Testnet postępuj zgodnie z nimi
+kroki:
 
-1. Open the ``concordium-node`` executable from the unzipped archive.
+1. Otwarte the ``concordium-node`` wykonywalny z rozpakowanego archiwum.
 
--  For *Mac* users: the first time you open the tool, right-click the
-   ``concordium-node`` binary and select **Open**. A message will appear
-   that the software is from an unidentified developer. Select **Open**
-   again.
--  For *Windows* users: the first time you open the tool, double-click
-   the ``concordium-node`` binary. A message will appear that the
-   software is from an unidentified developer. Select **More info** →
-   **Run anyway**.
--  When *restarting* a node consider using the
-   ``--no-block-state-import`` option. This will download just the
-   updates to the Concordium blockchain that occurred while the node was
-   inactive and might speed up the boot process.
+-  Dla *Mac* użytkowników: the pierwszy raz otwórz narzędzie, kliknij prawym przyciskiem myszy
+   ``concordium-node`` binarny i wyselekcjonować **otwarty**. 
+   Pojawi się komunikat, że oprogramowanie pochodzi od niezidentyfikowanego programisty.
+   wyselekcjonować **otwarty** jeszcze raz.
+-  Dla *Windows* użytkowników: the pierwszy raz otwórz narzędzie, podwójne kliknięcie
+   the ``concordium-node``dwójkowy. Pojawi się komunikat, 
+   że oprogramowanie pochodzi od niezidentyfikowanego programisty. wyselekcjonować **Więcej informacji** →
+   **Biegnij mimo wszystko**.
+-  Gdy *ponowne uruchamianie* węzeł(node) rozważać używając
+   ``--no-block-state-import``opcja. Spowoduje to pobranie tylko aktualizacji
+   do łańcucha blokowego Concordium, który wystąpił, gdy węzeł(node) był nieaktywny 
+    i może przyspieszyć proces uruchamiania.
 
-2. Enter a name for your node. This name will be displayed in the public
-   dashboard.
+2. Wpisz nazwę swojego węzła. Ta nazwa będzie wyświetlana na publicznym pulpicie nawigacyjnym.
 
-3. If the tool has been started before you will asked if you want to
-   delete the local node database before starting. Pressing **y** will
-   delete and subsequently recreate the information on the state of the
-   Concordium blockchain that was saved on your computer. **Note that
-   deleting the local node database means it will take longer for your
-   node to catch-up with the Concordium network.**
+3. Jeśli narzędzie zostało uruchomione wcześniej, przed rozpoczęciem zostaniesz zapytany, 
+czy chcesz usunąć bazę danych węzłów lokalnych. pilny **y** usunie 
+i później odtwarzać informacje o the Stan z
+   Blockchain Concordium, który został zapisany na Twoim komputerze. **Zauważ, że
+   usunięcie bazy danych węzłów lokalnych oznacza, że zajmie to więcej czasu
+   węzeł(node) do dogonienia sieci Concordium.**
 
-The tool will now download the Concordium Client image and load it into
-Docker. The client will launch and start outputting logging information
-about the operation of the node.
+Narzędzie pobierze teraz obraz klienta Concordium i załaduje go do
+Doker. Klient uruchomi się i zacznij wyświetlać informacje logowania
+o działaniu węzła.
 
-Seeing your node on the dashboard
+Widząc swój węzeł(node) na pulpicie nawigacyjnym
 =================================
 
-After running ``concordium-node`` you can
+Po bieganiu ``concordium-node`` możesz
 
--  see your node on the `Network Dashboard`_
--  :ref:`query<testnet-query-node>` information about blocks, transactions, and accounts
+-  zobacz swój węzeł(node) the `Network Dashboard`_
+-  :ref:`query<testnet-query-node>` informacje o blokach, transakcje, i kont.
 
-Network dashboard
+Sieć deska rozdzielcza
 -----------------
 
-It will take the client a while to catch up with the state of the
-Concordium blockchain. This involves, for example, downloading
-information about all the blocks in the chain.
+Poprawienie stanu pliku zajmie klientowi trochę czasu
+Blockchain Concordium. wiąże, na przykład, Ściągnij
+informacje o wszystkich blokach w łańcuchu.
 
-Among other information, on the `Network Dashboard`_ you can
-get an idea of how long it will take your node to catch up with the
-chain. For that you can compare the node's **Length** value (number of
-blocks your node received) with the **Chain Len** value (number of
-blocks in the longest chain in the network) which is displayed at the
-top of the dashboard.
+Między innymi, na `Network Dashboard`_ możesz
+otrzymać pomysł ile czasu zajmie węzłowi nadrobienie zaległości z łańcuch.
+Za to możesz porównać węzeł(node) **Długość** wartość (Liczba
+Bloki twój węzeł(node) otrzymał) z the **Chain Len** wartość 
+(Liczba Bloki w najdłuższym łańcuchu w sieci) który jest wyświetlany
+w górnej części deski rozdzielczej.
 
-
-Enabling inbound connections
+Włącz przychodzące połączenia
 ============================
 
-If you are running your node behind a firewall, or behind your home
-router, then you will probably only be able to connect to other nodes,
-but other nodes will not be able to initiate connections to your node.
-This is perfectly fine, and your node will fully participate in the
-Concordium network. It will be able to send transactions and,
-:ref:`if so configured<become-a-baker>`, to bake and finalize.
+Jeśli jesteś bieganie Twój węzeł(node) za firewallem, lub za domem
+router, wtedy prawdopodobnie będziesz mógł łączyć się tylko z innymi węzłami,
+ale inne węzły nie będą mogły inicjować połączeń z Twoim węzłem.
+To jest całkowicie w porządku, a Twój węzeł(node) będzie w pełni uczestniczył
+Sieć Concordium. Będzie mógł wysyłać transakcje i,
+:ref:`if so configured<become-a-baker>`, upiec i sfinalizować.
 
-However you can also make your node an even better network participant
-by enabling inbound connections. By default, ``concordium-node`` listens
-on port ``8888`` for inbound connections. Depending on your network and
-platform configuration you will either need to forward an external port
-to ``8888`` on your router, open it in your firewall, or both. The
-details of how this is done will depend on your configuration.
+Jednak możesz również uczynić swój węzeł(node) jeszcze lepszym uczestnikiem sieci
+poprzez włączenie połączeń przychodzących. Domyślnie, ``concordium-node`` listens
+on port ``8888`` dla połączeń przychodzących. W zależności od Twojej sieci i
+konfiguracja platformy będziesz zarówno trzeba przekazać dalej na port zewnętrzny
+aby ``8888`` na Twoim router, otwórz go w swoim firewallu, lub oba.
+szczegóły tego, jak to się robi, zależą od twojej konfiguracji.
 
-Configuring ports
+Konfigurowanie portów
 -----------------
 
-The node listens on four ports, which can be configured by supplying the
-appropriate command line arguments when starting the node. The ports
-used by the node are as follows:
+Węzeł(node) nasłuchuje na czterech portach, that can be configured przez dostarczanie
+odpowiednie argumenty wiersza poleceń podczas uruchamiania węzła. Porty
+używane przez węzeł(node) są następujące:
 
--  8888, the port for peer-to-peer networking, which can be set with
+-  8888, port dla sieci peer-to-peer, które można ustawić za pomocą
    ``--listen-node-port``
--  8082, the port used by middleware, which can be set with ``--listen-middleware-port``
--  10000, the gRPC port, which can be set with ``--listen-grpc-port``
+-  8082, port używany przez oprogramowanie pośredniczące, które można ustawić za pomocą ``--listen-middleware-port``
+-  10000, the gRPC port, które można ustawić za pomocą ``--listen-grpc-port``
 
-When changing the mappings above the docker container must be
-stopped (:ref:`stop-a-node`), reset, and started again. To reset the container either use
-``concordium-node-reset-data`` or run ``docker rm concordium-client`` in
-a terminal.
+Podczas zmiany mapowań powyżej kontenera Dockera musi być
+już się zatrzymał (:ref:`stop-a-node`),Resetowanie, i zaczął jeszcze raz. Aby zresetować kontener albo użyj
+``concordium-node-reset-data`` lub biegnij ``docker rm concordium-client`` w
+terminal.
 
-We *strongly recommend* that your firewall should be configured to only
-allow public connections on port 8888 (the peer-to-peer networking
-port). Someone with access to the other ports may be able to take
-control of your node or accounts you have saved on the node.
+My *zdecydowanie zalecane* że twoja zapora powinna być skonfigurowana tylko
+zezwalaj na połączenia publiczne na porcie 8888 (sieci peer-to-peer
+Port).Ktoś z dostępem do innych portówmoże być w stanie wziąć
+kontrola twojego węzła lub konta zapisane w węźle.
 
 .. _stop-a-node:
 
-Stopping the node
+Zatrzymywanie węzła
 =================
 
-To stop the node, press **CTRL+c**, and wait for the node to do a clean
-shutdown.
+Aby zatrzymać węzeł(node), naciśnij **CTRL+c**, i poczekaj, aż węzeł(node) wyczyści
+zamknąć.
+Jeśli przypadkowo zamkniesz okno bez jawnego wyłączania
+Klient, będzie dalej działać w tle w Dockerze. kiedy to się dzieje, 
+Użyj ``concordium-node-stop`` binarny w ten sam sposób, w jaki otworzyłeś
+the ``concordium-node`` wykonywalny.
 
-If you accidentally close the window without explicitly shutting down
-the client, it will keep running in the background in Docker. In that
-case, use the ``concordium-node-stop`` binary in the same way you opened
-the ``concordium-node`` executable.
-
-Support & Feedback
+Wsparcie i informacje zwrotne
 ==================
 
-Logging information for your node can be retrieved using the
-``concordium-node-retrieve-logs`` tool. This will save logs from the
-running image to a file. Additionally, if given permission, it will
-retrieve information about the programs currently running on the system.
+Rejestrowanie informacji dla twojego węzła można odzyskać używając
+``concordium-node-retrieve-logs`` narzędzie. Spowoduje to zapisanie dzienników z pliku
+uruchomiony obraz do pliku. Dodatkowo, jeśli otrzyma pozwolenie, to będzie
+uzyskać informację o programach aktualnie uruchomionych w systemie.
 
-You can send your logs, system information, questions and feedback to
-testnet@concordium.com. You can also reach out at our `Discord`_, or
-check out our :ref:`troubleshooting page<troubleshooting-and-known-issues>`
+Możesz wysłać swoje logi, informacje o systemie, pytania i informacje zwrotne aby
+testnet@concordium.com.Możesz również skontaktować się w nasz `Discord`_, lub
+sprawdź nasze :ref:`troubleshooting page<troubleshooting-and-known-issues>`
 
