@@ -6,231 +6,229 @@
 .. _become-a-baker:
 
 ==================================
-Become a baker (create blocks)
+Zostań piekarzem (twórz bloki)
 ==================================
 
 .. contents::
    :local:
    :backlinks: none
+   
+Ta sekcja wyjaśnia, czym jest piekarz, jego rolę w sieci i jak nią zostać.
 
-This section explains what a baker is, its role in the network and how to become
-one.
+Czytając tę sekcję, dowiesz się:
 
-By reading this section you will learn:
+-  Co to jest piekarz i pokrewne pojęcia do tego.
+-  Jak ulepszyć swój węzeł(node), aby zostać piekarzem.
 
--  What is a baker and the concepts related to it.
--  How to upgrade your node to become a baker.
+Proces zostania piekarzem można podsumować w następujących krokach:
 
-The process of becoming a baker can be summarized in the following steps:
+#. Zdobądź konto i niektóre GTUs.
+#. Zdobądź zestaw kluczy do piekarza.
+#. Zarejestruj klucze piekarza na koncie.
+#. Uruchom węzeł(node) za pomocą klawiszy piekarza.
 
-#. Get an account and some GTUs.
-#. Get a set of baker keys.
-#. Register the baker keys with the account.
-#. Start the node with the baker keys.
-
-After completing these steps, the baker node will bake blocks. If a baked block
-is added to the chain the node's baker will receive a reward.
+Po wykonaniu tych czynności, węzeł(node) piekarza będzie piec bloki. Jeśli upieczony blok
+jest dodawany do łańcucha piekarz węzła(node) otrzyma nagrodę.
 
 .. note::
 
-   In this section we will use the name ``bakerAccount`` as the name of the
-   account that will be used to register and manage a baker.
+   W tej sekcji użyjemy nazwy ``bakerAccount`` jako nazwa
+   konto które posłużą do zarejestrowania piekarza i zarządzania nim.
 
-Definitions
+Definicje
 ===========
 
-Baker
+Piekarz
 -----
 
-A node is a *baker* (or *is baking*) when it actively participates in the
-network by creating new blocks that are added to the chain. A baker collects,
-orders and validates the transactions that are included in a block to maintain
-the integrity of the blockchain. The baker signs each block that they bake so
-that the block can be checked and executed by the rest of the participants of
-the network.
+Węzeł(node) to *piekarz* (lub *pieczenie*) kiedy aktywnie uczestniczy w
+sieć tworząc nowe bloki, które są dodawane do łańcucha. Piekarz zbiera,
+Orders i uprawomocnić the transakcje które są zawarte w bloku utrzymać
+integralność łańcucha bloków. Piekarz podpisuje każdy blok że oni piec 
+więc że blok można sprawdzić i wykonany przez resztę uczestników
+sieć.
 
-Baker keys
+Piekarz Klucze
 ----------
 
-Each baker has a set of cryptographic keys called *baker keys*. The node uses
-these keys to sign the blocks that it bakes. In order to bake blocks signed by a
-specific baker the node has to be running with its set of baker keys loaded.
+Każdy piekarz ma zestaw kluczy kryptograficznych nazywa *Piekarz Klucze*. Węzeł(node) używa
+te klucze podpisać bloki, które piecze. W celu wypieku bloków sygnowanych przez a
+konkretnego piekarza węzeł(node) musi działać z załadowanym zestawem kluczy piekarza.
 
-Baker account
+Konto Piekarz 
 -------------
 
-Each account can use a set of baker keys to register a baker.
+Każde konto może używać zestawu kluczy piekarza do rejestracji piekarza.
 
-Whenever a baker bakes a valid block that gets included in the chain, after some
-time a reward is paid to the associated account.
+Kiedy tylko Piekarz piecze prawidłowy blok, który zostanie włączony do łańcucha, po jakimś
+czas nagroda jest wypłacana na powiązane konto.
 
-Stake and lottery
+Stake i loteria
 -----------------
 
 .. todo::
 
    - Link to release schedule.
 
-The account can stake part of its GTU balance into the *baker stake* and can
-later manually release all or part of the staked amount. The staked amount
-cannot be moved or transferred until it is released by the baker.
+Konto może postawić część swojego salda GTU na *stake piekarza*, a później może ręcznie
+zwolnić całość lub część postawionej kwoty. Postawiona kwota nie może zostać przesunięta 
+ani przeniesiona, dopóki nie zostanie zwolniona przez piekarza.
 
 .. note::
 
-   If an account owns an amount that was transferred with a release schedule,
-   the amount can be staked even if not released yet.
+   Jeśli konto posiada kwotę, która została przekazana z harmonogramem wydań,
+   kwota może zostać stake, nawet jeśli nie została jeszcze zwolniona.
 
-In order to be chosen for baking a block, the baker must participate in a
-*lottery* in which the probability of getting a winning ticket is roughly
-proportional to the staked amount.
+aby być wybranym do pieczenia bloku, piekarz musi uczestniczyć w
+*loteria* w którym prawdopodobieństwo otrzymania zwycięskiego kuponu jest przybliżone
+proporcjonalny do postawionej kwoty.
 
-The same stake is used when calculating whether a baker is included in the finalization
-committee or not. See Finalization_.
+Ta sama stake jest używana przy obliczaniu, czy piekarz zostanie uwzględniony w finalizacji
+komitet albo nie. Widzieć Finalizaji_.
 
-.. _epochs-and-slots:
+.. _epochs-and-slots-pl:
 
-Epochs and slots
+Epochs i sloty
 ----------------
 
-In the Concordium blockchain, time is subdivided into *slots*. Slots have a time
-duration fixed at the Genesis block. On any given branch, each slot can have at
-most one block, but multiple blocks on different branches can be produced in the
-same slot.
+W Concordium blockchain, czas jest podzielony na *sloty*.Sloty mieć czas
+czas trwania ustalony w bloku Genesis. na dowolnym oddziale, każdy slot może mieć 
+w najbardziej jeden blok, ale wiele bloków na różnych gałęziach można wytworzony w
+ten sam slot.
 
 .. todo::
 
    Let's add a picture.
 
-When considering the rewards and other baking-related concepts, we use the
-concept of an *epoch* as a unit of time that defines a period in which the set
-of current bakers and stakes are fixed. Epochs have a time duration fixed at the
-Genesis block. In the testnet, epochs have a duration of **1 hour**.
+Gdy rozważając nagrody i inne pieczenie-związane z koncepcje, Używamy the
+koncepcja *epoki* jako jednostka czasu definiująca okres w którym zestaw
+obecnych piekarzy i stake są ustalone. Epoki mieć czas Trwanie naprawione na
+Blok Genesis. w testnet, epoki mają czas trwania z **1 hour**.
 
-Start baking
+Rozpocznij pieczenie
 ============
 
-Managing accounts
+Zarządzanie kontami
 -----------------
 
-This section provides a brief recap of the relevant steps for importing an
-account. For a complete description, see :ref:`managing_accounts`.
+Ta sekcja zapewnia krótkie podsumowanie odpowiednich kroków, dla Importowanie konto. 
+Aby uzyskać pełny opis, widzieć :ref:`managing_accounts`.
 
-Accounts are created using the :ref:`concordium_id` app. Once an account has been
-successfully created, navigating to the **More** tab and selecting **Export**
-allows you to get a JSON file containing the account information.
+Konta są tworzone przy użyciu :ref:`concordium_id` aplikacja. Kiedyś konto 
+pomyślnie utworzony, nawigacja do the **więcej** tab i wybór **Eksport**
+pozwala Ci aby uzyskać plik JSON zawierające informacje o koncie.
 
-To import an account into the toolchain run
+Aby zaimportować konto do łańcucha narzędzi uruchom
 
 .. code-block:: console
 
    $concordium-client config account import <path/to/exported/file> --name bakerAccount
 
-``concordium-client`` will ask for a password to decrypt the exported file and
-import all accounts. The same password will be used for encrypting the
-transaction signing keys and the encrypted transfers key.
+``concordium-client`` zapyta o hasło, aby odszyfrować wyeksportowany plik i zaimportować wszystkie konta.
+To samo hasło będzie używane do szyfrowania kluczy podpisywania transakcji i zaszyfrowanego klucza transferów.
 
-Creating keys for a baker and registering it
+Tworzenie kluczy dla piekarza i rejestracyjny tego
 --------------------------------------------
 
 .. note::
 
-   For this process the account needs to own some GTU so make sure to request the
-   100 GTU drop for the account in the mobile app.
+   Do tego procesu konto musi posiadać jakąś GTU więc upewnij się zażądać the
+   100 GTU upuść na konto w aplikacji mobilnej.
 
-Each account has a unique baker ID that is used when registering its baker. This
-ID has to be provided by the network and currently cannot be precomputed. This
-ID must be given inside the baker keys file to the node so that it can use the
-baker keys to create blocks. The ``concordium-client`` will automatically fill
-this field when performing the following operations.
+Każde konto ma unikalny identyfikator piekarza który jest używany podczas rejestracji piekarza. To
+Identyfikator musi zostać dostarczony przez sieć i obecnie nie można go wstępnie obliczyć.
+Ten identyfikator należy podać wewnątrz kluczy piekarza do węzła, aby mógł on używać kluczy
+piekarza do tworzenia bloków. The ``concordium-client`` automatycznie wypełni to 
+pole podczas wykonywania poniższych operacji.
 
-To create a fresh set of keys run:
+Aby utworzyć nowy zestaw kluczy, uruchom:
 
 .. code-block:: console
 
    $concordium-client baker generate-keys <keys-file>.json
 
-where you can choose an arbitrary name for the keys file. To
-register the keys in the network you need to be :ref:`running a node <running-a-node>`
-and send a ``baker add`` transaction to the network:
+gdzie możesz wybrać nieprzewidywalną nazwę na klucze plik. Do
+zarejestrować klucze w sieci musisz być :ref:`bieganie węzeł(node) <running-a-node>`
+i wyślij ``piekarz dodaj`` transakcja do sieci:
 
 .. code-block:: console
 
    $concordium-client baker add <keys-file>.json --sender bakerAccount --stake <amountToStake> --out <concordium-data-dir>/baker-credentials.json
 
-replacing
+będzie zastąpiony
 
-- ``<amountToStake>`` with the GTU amount for the baker's initial stake
-- ``<concordium-data-dir>`` with the following data directory:
+- ``<amountToStake>`` z kwotą GTU for the baker's stawka początkowa.
+- ``<concordium-data-dir>`` z następującym katalogiem danych:
 
   * on Linux and MacOS: ``~/.local/share/concordium``
   * on Windows: ``%LOCALAPPDATA%\\concordium``.
 
-(The output file name should remain ``baker-credentials.json``).
+(Nazwa pliku wyjściowego powinna pozostać ``baker-credentials.json``).
 
-Provide a ``--no-restake`` flag to avoid automatically adding the
-rewards to the staked amount on the baker. This behavior is described on the
-section `Restaking the earnings`_.
+Zapewnij ``--no-restake`` flaga, której należy unikać automatyczne dodawanie
+nagrody do postawiona kwota na piekarzu. To zachowanie jest opisane w
+Sekcja `Restaking the earnings`_.
 
-In order to start the node with these baker keys and start producing blocks you
-first need to shut down the current running node (either by pressing
-``Ctrl + C`` on the terminal where the node is running or using the
-``concordium-node-stop`` executable).
+w celu uruchomić węzeł tym kluczem piekarzas i zacznij produkować bloki 
+najpierw musisz zamknąć aktualnie działający węzeł (albo naciskając
+``Ctrl + C`` na terminalu gdzie jest węzeł(node) bieganie lub używając
+``concordium-node-stop`` wykonywalny).
 
-After placing the file in the appropriate directory (already done in the
-previous command when specifying the output file), start the node again using
-``concordium-node``. The node will automatically start baking when the baker
-gets included in the bakers for the current epoch.
+Po umieszczeniu pliku w odpowiednim katalogu (już zrobione w
+poprzednie polecenie podczas określania pliku wyjściowego), start węzeł(node) ponownie używając
+``concordium-node``. Węzeł(node) automatycznie rozpocząć pieczenie kiedy piekarz
+dostaje zawarte w piekarzach dla bieżącej epoki.
 
-This change will be executed
-immediately and will take effect when finishing the epoch after the one in which
-the transaction for adding the baker was included in a block.
+Ta zmiana zostanie wykonana
+natychmiast i zacznie obowiązywać, kiedy wykończeniowy epoka po w którym
+transakcja za dodanie piekarza był zawarty w bloku.
 
-.. table:: Timeline: adding a baker
+.. table:: Oś czasu: dodanie piekarza
 
    +-------------------------------------------+-----------------------------------------+-----------------+
-   |                                           | When transaction is included in a block | After 2 epochs  |
+   |                                           | Gdy transakcja jest zawarta w bloku     | Po 2 epochs     |
    +===========================================+=========================================+=================+
-   | Change is visible by querying the node    |  ✓                                      |                 |
+   | Zmiana jest widoczna przez querying węzeł |  ✓                                      |                 |
    +-------------------------------------------+-----------------------------------------+-----------------+
    | Baker is included in the baking committee |                                         | ✓               |
    +-------------------------------------------+-----------------------------------------+-----------------+
 
 .. note::
 
-   If the transaction for adding the baker was included in a block during epoch `E`, the
-   baker will be considered as part of the baking committee when epoch
+   Jeśli transakcja za dodanie piekarza został zawarty w bloku w czasie epoki `E`, piekarz będzie brany pod uwagę
+   jako część komitetu pieczenia w epoce
    `E+2` starts.
 
-Managing the baker
+Zarządzający piekarz
 ==================
 
-Checking the status of the baker and its lottery power
+Sprawdzanie statusu piekarza i jego moc loterii
 ------------------------------------------------------
 
-In order to see if the node is baking, you can check various sources that
-offer different degrees of precision in the information displayed.
+W celu zobacz, czy węzeł(node) się piecze, możesz sprawdzić różne źródłas że
+oferują różne stopnie precyzja w wyświetlanych informacjach.
 
-- In the `network dashboard <http://dashboard.testnet.concordium.com>`_, your
-  node will show its baker ID in the ``Baker`` column.
-- Using the ``concordium-client`` you can check the list of current bakers
-  and the relative staked amount that they hold, i.e. their lottery power.  The
-  lottery power will determine how likely it is that a given baker will win the
-  lottery and bake a block.
+- W `sieć dashboard <http://dashboard.testnet.concordium.com>`_, Twój
+  węzeł pokaże swój identyfikator piekarza w ``Baker`` column.
+- Używając ``concordium-client`` możesz sprawdzić listę aktualnych piekarzy
+  i krewny postawiona kwota że oni trzymają, i.e. ich moc loterii.
+  Moc loterii określi jak prawdopodobne to ten piekarz wygra
+  loteria i upiecz blok.
 
   .. code-block:: console
 
      $concordium-client consensus show-parameters --include-bakers
      Election nonce:      07fe0e6c73d1fff4ec8ea910ffd42eb58d5a8ecd58d9f871d8f7c71e60faf0b0
      Election difficulty: 4.0e-2
-     Bakers:
-                                  Account                       Lottery power
+     Piekarze:
+                                  Konto                       Moc loterii
              ----------------------------------------------------------------
          ...
          34: 4p2n8QQn5akq3XqAAJt2a5CsnGhDvUon6HExd2szrfkZCTD4FX   <0.0001
          ...
 
-- Using the ``concordium-client`` you can check that the account has
-  registered a baker and the current amount that is staked by that baker.
+- Używając ``concordium-client`` możesz sprawdzić, czy konto ma
+  zarejestrował piekarza i aktualną kwotę postawioną przez tego piekarza.
 
   .. code-block:: console
 
@@ -242,45 +240,45 @@ offer different degrees of precision in the information displayed.
       - Restake earnings: yes
      ...
 
-- If the staked amount is big enough and there is a node running with the baker
-  keys loaded, that baker should eventually produce blocks and you can see
-  in your mobile wallet that baking rewards are being received by the account,
-  as seen in this image:
+- Jeśli postawiona kwota jest wystarczająco duży i jest uruchomiony węzeł z piekarzem
+  klucze załadowane, ten piekarz powinien w końcu produkować bloki i możesz zobaczyć
+  w portfelu mobilnym że nagrody za wypieki są odbierane na koncie,
+  jak widać na tym obrazku:
 
   .. image:: images/bab-reward.png
      :align: center
      :width: 250px
 
-Updating the staked amount
+Aktualizacja postawioną kwotę
 --------------------------
 
-To update the baker stake run
+Aby zaktualizować piekarza bieg stake
 
 .. code-block:: console
 
    $concordium-client baker update-stake --stake <newAmount> --sender bakerAccount
+   
+Modyfikacja postawionej kwoty modyfikuje prawdopodobieństwo, że piekarz zostanie wybrany
+piec bloki.
 
-Modifying the staked amount modifies the probability that a baker gets elected
-to bake blocks.
+Kiedy piekarz **dodaje stawkę po raz pierwszy lub zwiększa swoją stawkę**, że
+zmiana jest wykonywana w łańcuchu i staje się widoczny jak tylko transakcja
+jest zawarty w bloku(może być widziane poprzez ``concordium-client account show
+bakerAccount``) i zaczyna obowiązywać 2 epoki po tym.
 
-When a baker **adds stake for the first time or increases their stake**, that
-change is executed on the chain and becomes visible as soon as the transaction
-is included in a block (can be seen through ``concordium-client account show
-bakerAccount``) and takes effect 2 epochs after that.
+.. table:: Oś czasu: zwiększenie stake
 
-.. table:: Timeline: increasing the stake
+   +-------------------------------------------+--------------------------------------+----------------+
+   |                                           |  Gdy transakcja jest zawarta w bloku | Po 2 epochs    |                    
+   +===========================================+======================================+================+
+   | Zmiana jest widoczna przez querying węzeł | ✓                                    |                |
+   +-------------------------------------------+--------------------------------------+----------------+
+   | Baker korzysta z nowej stake              |                                      | ✓              |
+   +-------------------------------------------+--------------------------------------+----------------+
 
-   +----------------------------------------+-----------------------------------------+----------------+
-   |                                        | When transaction is included in a block | After 2 epochs |
-   +========================================+=========================================+================+
-   | Change is visible by querying the node | ✓                                       |                |
-   +----------------------------------------+-----------------------------------------+----------------+
-   | Baker uses the new stake               |                                         | ✓              |
-   +----------------------------------------+-----------------------------------------+----------------+
-
-When a baker **decreases the staked amount**, the change will need *2 +
-bakerCooldownEpochs* epochs to take effect. The change becomes visible on the
-chain as soon as the transaction is included in a block, it can be consulted through
+Kiedy piekarz **zmniejsza postawioną kwotę**, zmiana będzie potrzebować *2 +
+bakerCooldownEpochs* epoki, aby odniosły skutek. Zmiana stanie się widoczna na
+łańcuch gdy tylko transakcja zostanie zawarta w bloku, to może być konsultowane poprzez
 ``concordium-client account show bakerAccount``:
 
 .. code-block:: console
@@ -294,23 +292,24 @@ chain as soon as the transaction is included in a block, it can be consulted thr
 
    ...
 
-.. table:: Timeline: decreasing the stake
+.. table:: Oś czasu: maleje stake
 
-   +----------------------------------------+-----------------------------------------+----------------------------------------+
-   |                                        | When transaction is included in a block | After *2 + bakerCooldownEpochs* epochs |
-   +========================================+=========================================+========================================+
-   | Change is visible by querying the node | ✓                                       |                                        |
-   +----------------------------------------+-----------------------------------------+----------------------------------------+
-   | Baker uses the new stake               |                                         | ✓                                      |
-   +----------------------------------------+-----------------------------------------+----------------------------------------+
-   | Stake can be decreased again or        | ✗                                       | ✓                                      |
-   | baker can be removed                   |                                         |                                        |
-   +----------------------------------------+-----------------------------------------+----------------------------------------+
+   +------------------------------------------+--------------------------------------+----------------------------------------+
+   |                                          |  Gdy transakcja jest zawarta w bloku |   Po *2 + bakerCooldownEpochs* epochs  |
+   +========================================+========================================+========================================+
+   | Zmiana jest widoczna przez querying węzeł| ✓                                    |                                        |
+   +------------------------------------------+--------------------------------------+----------------------------------------+
+   | Baker korzysta z nowej stake             |                                      | ✓                                      |
+   +------------------------------------------+--------------------------------------+----------------------------------------+
+   | Stake can be decreased again or          | ✗                                    | ✓                                     |
+   | baker can be removed                     |                                      |                                        |
+   +------------------------------------------+--------------------------------------+----------------------------------------+
 
 .. note::
-
-   In the testnet, ``bakerCooldownEpochs`` is set initially to 168 epochs. This
-   value can be checked as follows:
+To
+   wartość można sprawdzić w następujący sposób:
+   w testnet, ``bakerCooldownEpochs`` jest początkowo ustawiony na 168 epoki. To
+   wartość można sprawdzić w następujący sposób:
 
    .. code-block:: console
 
@@ -321,33 +320,33 @@ chain as soon as the transaction is included in a block, it can be consulted thr
 
 .. warning::
 
-   As noted in the `Definitions`_ section, the staked amount is *locked*,
-   i.e. it cannot be transferred or used for payment. You should take this
-   into account and consider staking an amount that will not be needed in the
-   short term. In particular, to deregister a baker or to modify the staked
-   amount you need to own some non-staked GTU to cover the transaction
-   costs.
+   Jak zaznaczono w `Definitions`_ Sekcja, postawiona kwota wynosi *zablokowany*,
+   i.e. nie można go przenieść ani wykorzystać do zapłaty. Powinieneś to wziąć
+   na konto i rozważ postawienie kwoty, która nie będzie potrzebna w
+   krótkoterminowe. W szczególności, aby wyrejestrować piekarza lub zmodyfikować postawioną piekarz
+   kwotę, której potrzebujesz, aby posiadać nieobstawione GTU, aby pokryć transakcję
+   koszty.
 
-Restaking the earnings
+Restaking zarobki
 ----------------------
 
-When participating as a baker in the network and baking blocks, the account
-receives rewards on each baked block. These rewards are automatically added to
-the staked amount by default.
+Uczestnicząc jako piekarz w sieci i blokach do pieczenia, konto
+otrzymuje nagrody za każdy upieczony blok. Te nagrody są automatycznie dodawane do
+domyślnie postawiona kwota.
 
-You can choose to modify this behavior and instead receive the rewards in
-the account balance without staking them automatically. This switch can be
-changed through ``concordium-client``:
+Możesz wybrać aby zmodyfikować to zachowanie a zamiast tego otrzymuj nagrody w
+saldo konta bez staking je automatycznie. Ten przełącznik może być
+zmieniony poprzez ``concordium-client``:
 
 .. code-block:: console
 
    $concordium-client baker update-restake False --sender bakerAccount
    $concordium-client baker update-restake True --sender bakerAccount
 
-Changes to the restake flag will take effect immediately; however, the changes
-start affecting baking and finalizing power in the epoch after next. The current
-value of the switch can be seen in the account information which can be queried
-using ``concordium-client``:
+Zmiany flagi restake zaczną obowiązywać natychmiast; jednak, Zmiany
+początek wpływające na pieczenie i finalizacja moc w epoki po następnym. Obecny
+Wartość przełącznika można zobaczyć w informacjach o koncie, które można zapytać
+używając ``concordium-client``:
 
 .. code-block:: console
 
@@ -360,65 +359,65 @@ using ``concordium-client``:
 
    ...
 
-.. table:: Timeline: updating restake
+.. table:: Oś czasu: aktualizacja restake
 
-   +-----------------------------------------------+-----------------------------------------+-------------------------------+
-   |                                               | When transaction is included in a block | 2 epochs after being rewarded |
-   +===============================================+=========================================+===============================+
-   | Change is visible by querying the node        | ✓                                       |                               |
-   +-----------------------------------------------+-----------------------------------------+-------------------------------+
-   | Earnings will [not] be restaked automatically | ✓                                       |                               |
-   +-----------------------------------------------+-----------------------------------------+-------------------------------+
-   | If restaking automatically, the gained        |                                         | ✓                             |
-   | stake affects the lottery power               |                                         |                               |
-   +-----------------------------------------------+-----------------------------------------+-------------------------------+
+   +-------------------------------------------------+-----------------------------------------+-------------------------------+
+   |                                                 | Gdy transakcja jest zawarta w bloku     | 2 epochs po byciu wynagrodzony|
+   +=================================================+=========================================+===============================+
+   | Zmiana jest widoczna przez querying węzeł       | ✓                                       |                               |
+   +-------------------------------------------------+-----------------------------------------+-------------------------------+
+   | Zarobki będą [not] być automatycznie restaked   | ✓                                       |                               |
+   +-------------------------------------------------+-----------------------------------------+-------------------------------+
+   | jeśli restaking automatycznie, zdobyte          |                                         | ✓                             |
+   | stake wpływa na moc loterii                     |                                         |                               |
+   +-------------------------------------------------+-----------------------------------------+-------------------------------+
 
-When the baker is registered, it will automatically re-stake the earnings, but as
-mentioned above, this can be changed by providing the ``--no-restake`` flag to
-the ``baker add`` command as shown here:
+Kiedy piekarz jest zarejestrowany, to będzie automatycznie re-stake zarobki, ale tak jak
+wspomniano powyżej, można to zmienić dostarczając ``--no-restake`` flaga do
+the ``baker add`` polecenie, jak pokazano tutaj:
 
 .. code-block:: console
 
    $concordium-client baker add baker-keys.json --sender bakerAccount --stake <amountToStake> --out baker-credentials.json --no-restake
 
-Finalization
+Finalizacja
 ------------
 
-Finalization is the voting process performed by nodes in the *finalization
-committee* that *finalizes* a block when a sufficiently big number of members of
-the committee have received the block and agree on its outcome. Newer blocks
-must have the finalized block as an ancestor to ensure the integrity of the
-chain. For more information about this process, see the
-:ref:`finalization<glossary-finalization>` section.
+Finalizacja to proces głosowania wykonywany przez węzły w *Finalizacja komisja* 
+że *finalizuje* blok kiedy wystarczająco duża liczba członków 
+komisja otrzymałem the blok i uzgodnij jego wynik. Nowsze bloki
+musi mieć sfinalizowany blok jako przodek, aby zapewnić integralność
+łańcuch. Więcej informacji o tym procesie, zobacz
+:ref:`finalization<glossary-finalization>` sekcja.
 
-The finalization committee is formed by the bakers that have a certain staked
-amount. This specifically implies that in order to participate in the
-finalization committee you will probably have to modify the staked amount
-to reach said threshold. In the testnet, the staked amount needed to participate
-in the finalization committee is **0.1% of the total amount of existing GTU**.
+Komitet finalizacyjny jest utworzona przez piekarzy które mają pewne staked
+kwota. To konkretnie implikuje że aby wziąć udział w
+komitet finalizacyjny prawdopodobnie będziesz musiał zmodyfikować postawioną kwotę
+osiągnąć wspomniany próg. w testnet, postawiona kwota potrzebna do udziału
+w komisji finalizacyjnej jest **0.1% całkowitej kwoty istniejącej GTU**.
 
-Participating in the finalization committee produces rewards on each block that
-is finalized. The rewards are paid to the baker account some time after the
-block is finalized.
+Uczestnictwo w komitecie finalizacyjnym produkuje nagrody za każdy blok że
+jest sfinalizowana. Nagrody są wypłacane na konto piekarza jakiś czas po
+blok jest sfinalizowane.
 
-Removing a baker
+Usunięcie piekarza
 ================
 
-The controlling account can choose to de-register its baker on the chain. To do
-so you have to execute the ``concordium-client``:
+Konto kontrolujące może zdecydować o wyrejestrowaniu swojego piekarza jego piekarz na łańcuchu. do zrobienia
+więc musisz wykonać ``concordium-client``:
 
 .. code-block:: console
 
    $concordium-client baker remove --sender bakerAccount
 
-This will remove the baker from the baker list and unlock the staked amount on
-the baker so that it can be transferred or moved freely.
+Spowoduje to usunięcie piekarza z listy piekarzy i odblokowanie postawionej kwoty
+Piekarz aby można go było transfer lub poruszał się swobodnie.
 
-When removing the baker, the change has the same timeline as decreasing
-the staked amount. The change will need *2 + bakerCooldownEpochs* epochs to take effect.
-The change becomes visible on the chain as soon as the transaction is included in a block and you
-can check when this change will be take effect by querying the account information
-with ``concordium-client`` as usual:
+Podczas wyjmowania piekarza,zmiana ma tę samą oś czasu, co malejąca
+postawioną kwotę. Zmiana będzie potrzebować *2 + bakerCooldownEpochs* epoki odniosły skutek.
+Zmiana staje się widoczna w łańcuchu, gdy tylko transakcja zostanie włączona do bloku a ty
+można sprawdzić kiedy ta zmiana wejdzie w życie, sprawdzając informacje o koncie
+z ``concordium-client`` jak zwykle: 
 
 .. code-block:: console
 
@@ -431,24 +430,25 @@ with ``concordium-client`` as usual:
 
    ...
 
-.. table:: Timeline: removing a baker
+.. table:: Oś czasu: usunięcie piekarza
 
-   +--------------------------------------------+-----------------------------------------+----------------------------------------+
-   |                                            | When transaction is included in a block | After *2 + bakerCooldownEpochs* epochs |
-   +============================================+=========================================+========================================+
-   | Change is visible by querying the node     | ✓                                       |                                        |
-   +--------------------------------------------+-----------------------------------------+----------------------------------------+
-   | Baker is removed from the baking committee |                                         | ✓                                      |
-   +--------------------------------------------+-----------------------------------------+----------------------------------------+
+   +--------------------------------------------------+-------------------------------------------+----------------------------------------+
+   |                                                  | Gdy transakcja jest zawarta w bloku       | Po *2 + bakerCooldownEpochs* epochs    |
+   +==================================================+===========================================+========================================+
+   | Zmiana jest widoczna przez querying węzeł        | ✓                                         |                                        |
+   +--------------------------------------------------+-------------------------------------------+----------------------------------------+
+   | Baker zostaje usunięty z Komitetu ds. Pieczenia  |                                           | ✓                                      |
+   +--------------------------------------------------+-------------------------------------------+----------------------------------------+
 
 .. warning::
 
-   Decreasing the staked amount and removing the baker cannot be done
-   simultaneously. During the cooldown period produced by decreasing the staked
-   amount, the baker cannot be removed and vice versa.
+   Zmniejszenie postawionej kwoty i usunięcie piekarza nie może być zrobione
+   równocześnie. W okresie cooldown produkowany przez zmniejszenie postawionej
+   kwota, piekarza nie można usunąć i odwrotnie.
 
-Support & Feedback
+Wsparcie i informacje zwrotne
 ==================
 
-If you run into any issues or have suggestions, post your question or
-feedback on `Discord`_, or contact us at testnet@concordium.com.
+
+Jeśli napotkasz żadnych problemów lub mieć sugestie, opublikuj swoje pytanie lub
+informacje zwrotne na `Discord`_, lub Skontaktuj się z nami na testnet@concordium.com.
